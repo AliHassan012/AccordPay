@@ -8,7 +8,7 @@ An invoice review prototype for fictional DEMO FUNDS. Exactly three language che
 - Presentation: [AccordPay Demo](submission/AccordPay_Demo.pptx)
 - PDF test inputs: [12 invoice/contract pairs](delivery/INVOICES_AND_CONTRACTS_12/)
 - Deployment instructions: [Deployment setup](DEPLOYMENT.md)
-- Hosted URL: pending deployment and smoke test.
+- Hosted URL: [AccordPay](https://accordpay-production.up.railway.app). Homepage and health endpoint verified; hosted owner/payment flow still pending verification.
 
 The presentation includes current development evidence and labels the older evaluation as historical. Earlier walkthrough videos use the former product name and clearly labelled saved AI replays. [The two videos](submission/videos/) are optional supporting materials, not proof of current live analysis.
 
@@ -17,7 +17,7 @@ The presentation includes current development evidence and labels the older eval
 1. Open the app folder (the repository root after downloading from GitHub) in File Explorer.
 2. On this laptop dependencies are installed. Double-click **start.cmd**.
 3. Leave its terminal window open. Open **http://127.0.0.1:8000** in a browser.
-4. Click **D03**, then **Analyze with live AI**. Review the quotes and saved exact payment details.
+4. Expand **Try a demo**, click **D03**, then **Review invoice**. Review the quotes and saved exact payment details.
 5. Click **Open owner review**, enter the passcode you set privately, and confirm or reject.
 6. A confirmed supported D03 transfers PKR 25,000 of fictional funds: owner 500,000 → 475,000; vendor 0 → 25,000. Repeating approval gives the same receipt.
 7. Try **D07** for a corrected charge (HOLD), and **D04** for tentative approval (REVIEW). Both block payment.
