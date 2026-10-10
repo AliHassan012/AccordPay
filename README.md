@@ -10,7 +10,7 @@ An invoice review prototype for fictional DEMO FUNDS. Exactly three language che
 - Deployment instructions: [Render Free setup](DEPLOYMENT.md)
 - Hosted URL: pending deployment and smoke test.
 
-The presentation includes current development evidence and labels the older evaluation as historical. Earlier walkthrough videos use the former product name and clearly labelled saved AI replays. They remain local optional submission materials, not proof of current live analysis.
+The presentation includes current development evidence and labels the older evaluation as historical. Earlier walkthrough videos use the former product name and clearly labelled saved AI replays. [The two videos](submission/videos/) are optional supporting materials, not proof of current live analysis.
 
 ## Windows: run the app
 
