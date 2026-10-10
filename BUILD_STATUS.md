@@ -1,6 +1,6 @@
-## Railway preparation — 10 October 2026
+## Repository cleanup — 10 October 2026
 
-Render deployment repeatedly requested a card despite the user selecting Free $0/month. User chose to try Railway. Added RAILWAY_SETUP.md with GitHub trial verification, existing Dockerfile deployment, private variables, domain/BASE_URL, health check and honest ephemeral SQLite limitation. Railway eligibility and full outbound access depend on account verification; no unrestricted Gemini access or perpetual free hosting promised. No app, model, prompt, money gate, credential or local balance change. Existing Dockerfile preserved. Docker/railway CLIs are unavailable locally; container execution and Railway hosted flow remain UNTESTED. Official Railway docs reviewed, including current trial $5/up to30 days and restricted Limited Trial. Next: user signs in with GitHub and reports Full Trial or Limited Trial before we configure the hosted service. Deployed URL remains pending.
+Removed the hosting exploration guide and its README link at the user's request. Hosting remains undecided; deployed URL and hosted smoke tests are pending. No application behavior or credentials changed.
 
 ## AccordPay GitHub submission checkpoint — 10 October 2026
 
