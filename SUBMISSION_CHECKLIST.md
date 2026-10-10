@@ -4,7 +4,7 @@ Organizer deadline: Saturday night, 10 October 2026. An exact cutoff time was no
 
 | Material | State / location |
 |---|---|
-| GitHub repository | Upload in progress: https://github.com/AliHassan012/AccordPay |
+| GitHub repository | Uploaded and remote branch verified: https://github.com/AliHassan012/AccordPay |
 | Deployed project link | Pending; Render Free instructions in DEPLOYMENT.md |
 | Demo presentation | submission/AccordPay_Demo.pptx; updated branding and current results |
 | Demo screen recording | Optional unless organizers require it; submission/videos/payment_approved.mp4 and payment_not_approved.mp4 are edited saved-result walkthroughs under the old product name |
