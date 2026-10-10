@@ -7,7 +7,7 @@ An invoice review prototype for fictional DEMO FUNDS. Exactly three language che
 - Repository: https://github.com/AliHassan012/AccordPay
 - Presentation: [AccordPay Demo](submission/AccordPay_Demo.pptx)
 - PDF test inputs: [12 invoice/contract pairs](delivery/INVOICES_AND_CONTRACTS_12/)
-- Deployment instructions: [Render Free setup](DEPLOYMENT.md)
+- Deployment instructions: [Railway trial setup](RAILWAY_SETUP.md); [Render setup](DEPLOYMENT.md) retained as an alternative
 - Hosted URL: pending deployment and smoke test.
 
 The presentation includes current development evidence and labels the older evaluation as historical. Earlier walkthrough videos use the former product name and clearly labelled saved AI replays. [The two videos](submission/videos/) are optional supporting materials, not proof of current live analysis.
