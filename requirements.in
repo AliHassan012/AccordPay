@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+jinja2
+google-genai
+pydantic
+pypdf
+pytest
+httpx
+python-dotenv
+python-multipart
+itsdangerous

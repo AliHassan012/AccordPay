@@ -1,0 +1,16 @@
+Vendor V001 | Invoice INV-D07 | Order ORDER-D07
+Source: fictional buyer-maintained record, not supplier-authenticated evidence.
+Authorized buyer: OWNER-01. Sender roles below are supplied fixture metadata.
+Buyer receipt note: both ordered laptops were received in full.
+
+Buyer-maintained deal record, agreed before the invoice:
+- Two Laptop Model L units at PKR 10,000 each.
+- The base price includes standard delivery, packaging and protective transit handling.
+- Rush / express delivery and on-site installation assistance are optional extra services. Their amount and service must be approved in writing by OWNER-01 for this order.
+- A supplier proposal, a promise to consider approval later, or permission to deliver does not itself approve an extra fee.
+- A newer explicit amendment by OWNER-01 replaces an older instruction for the same service/order. An ambiguous update requires clarification.
+- Any condition stated in an approval must be evidenced before relying on that approval.
+
+Chronological supplied correspondence:
+M1 | 2026-10-10T09:00:00+05:00 | OWNER-01 (buyer): Rush delivery Rs 5,000 approve hai.
+M2 | 2026-10-10T09:05:00+05:00 | OWNER-01 (buyer): Correction: final approved rush charge Rs 3,000 hai, 5,000 nahi.

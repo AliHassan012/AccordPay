@@ -1,0 +1,14 @@
+.env
+.venv
+runtime
+tests
+evaluation-results
+evaluation-repeat-new-key
+delivery/TEST_CASES_12
+delivery/TEST_CASES_12.zip
+delivery/INVOICES_AND_CONTRACTS_12
+delivery/INVOICES_AND_CONTRACTS_12.zip
+__pycache__
+.pytest_cache
+.git
+*.sqlite3

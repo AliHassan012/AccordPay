@@ -1,0 +1,27 @@
+{
+  "synthetic_demo_only": true,
+  "company": "BroGrammers Demo Trading (fictional)",
+  "approved_vendor": {
+    "vendor_id": "V001",
+    "name": "Campus Tech Supplies (fictional)",
+    "account": "DEMO-V001-ACCOUNT-A",
+    "verified_in_fixture": true
+  },
+  "authorized_buyer": {
+    "id": "OWNER-01",
+    "name": "Demo Owner"
+  },
+  "currency": "PKR",
+  "prior_paid_invoices": [],
+  "demo_owner_balance_minor_units": 50000000,
+  "demo_vendor_balance_minor_units": 0,
+  "money_unit": "100 minor units = 1 PKR",
+  "policy": {
+    "owner_final_approval_required": true,
+    "hold_or_review_must_not_execute": true,
+    "changed_account_requires_independent_verification": true,
+    "arithmetic_mismatch_blocks": true,
+    "already_paid_or_processing_invoice_blocks": true
+  },
+  "limitations": "All supplied sender identities, account verification and receipt facts are fictional staff records. AI does not authenticate identities or establish bank account ownership. This pack assumes the order goods were received, as stated in each buyer record."
+}

@@ -1,0 +1,14 @@
+Vendor: Campus Tech Supplies (fictional)
+Vendor ID: V001
+Invoice reference: INV-D06
+Order reference: ORDER-D06
+Issued: 10 October 2026, 09:30 Pakistan time
+Currency: PKR
+Destination account: DEMO-V001-ACCOUNT-A
+
+Base goods: 2 Laptop Model L units x PKR 10,000 = PKR 20,000
+Additional line: Rush delivery
+Additional amount: PKR 5,000
+Discount: PKR 0
+Tax: No separate tax line in this fictional fixture.
+TOTAL REQUESTED: PKR 25,000

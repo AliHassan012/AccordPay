@@ -1,0 +1,16 @@
+.env
+.venv/
+runtime/
+__pycache__/
+.pytest_cache/
+evaluation-results/
+evaluation-repeat-new-key/
+*.pyc
+
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+*.db
+*.pem
+*.key
