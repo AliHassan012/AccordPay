@@ -1,6 +1,9 @@
+## Deployed form security fix — 11 October 2026
+
+User authorized fixing the deployed app. Reproduced the reported cross-site error in Chrome using the fictional D04 example. Root cause: Referrer-Policy no-referrer makes native form POSTs send Origin:null, which the hosted CSRF guard correctly rejects. Changed the response policy to same-origin, preserving origin/referrer metadata for our own forms while suppressing referrers to external destinations. Did not allow hosted null/foreign origins or remove token checks. Added an HTTPS regression covering intake and owner approval, bad nonce, null/foreign origin and foreign referrer. Full local suite: 67 PASS in 7.13s; one existing dependency deprecation warning. Deployment and post-deploy browser verification pending. Existing AI exact-quote reliability and ephemeral hosted storage limitations remain.
 ## Copy cleanup publication — 10 October 2026
 
-User explicitly authorized publishing the local copy cleanup to GitHub and the deployed website. Publishing only the approved template/style changes; no provider, prompt, database or payment rule changes. Targeted regressions passed locally (11 checks); exact package verification follows. Railway redeploys automatically from main; public UI verification is pending. Future publication still requires user authorization.
+User explicitly authorized publishing the local copy cleanup to GitHub and the deployed website. Publishing only the approved template/style changes; no provider, prompt, database or payment rule changes. Exact repository package: 11 targeted HTTP/startup tests PASS in 2.87s. GitHub main updated to feacaf6. Railway automatic redeployment verified in the public browser: no section numbers or panel numbers, repeated helper copy removed, uploads and actions present. Screenshot runtime/screenshots/published-copy-cleanup.png saved locally. Future publication still requires user authorization.
 
 ## Local copy cleanup — 10 October 2026
 

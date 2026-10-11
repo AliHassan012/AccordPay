@@ -76,7 +76,10 @@ def create_app(store=None, analyze_fn=None, config_fn=settings):
                 chunks.append(chunk)
             request._body = b''.join(chunks)
         response = await call_next(request)
-        response.headers.update({'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Content-Security-Policy': "default-src 'self'; style-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"})
+        # Native form POSTs under no-referrer can send Origin:null, including
+        # Chrome on HTTPS. Keep same-origin metadata for CSRF verification;
+        # same-origin still suppresses referrers to external destinations.
+        response.headers.update({'Cache-Control': 'no-store', 'Referrer-Policy': 'same-origin', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Content-Security-Policy': "default-src 'self'; style-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"})
         return response
 
     def page(request, name, **context):
@@ -93,7 +96,7 @@ def create_app(store=None, analyze_fn=None, config_fn=settings):
         referrer = request.headers.get('referer')
         configured = config_fn()['base_url']
         allowed = {configured, str(request.base_url).rstrip('/')}
-        # The desktop in-app browser uses an opaque Origin:null for localhost.
+        # Legacy local pages can use an opaque Origin:null.
         # Permit that local-only case AFTER signed-session CSRF verification.
         # Hosted pages still reject null and all foreign origins; no wildcard.
         opaque_local = (origin == 'null' and not referrer and request.url.hostname in {'127.0.0.1', 'localhost'} and urlsplit(configured).hostname in {'127.0.0.1', 'localhost'})

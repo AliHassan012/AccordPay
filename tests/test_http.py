@@ -84,6 +84,30 @@ def test_cross_site_and_missing_csrf_are_blocked(store, sample):
         assert client.post(f'/owner/{row["id"]}',data=form).status_code == 403
         assert not store.history()
 
+def test_hosted_forms_preserve_origin_metadata_and_validate_both_steps(store,sample):
+    hosted={**CONFIG,'base_url':'https://example.test','cookie_secure':True}
+    with TestClient(create_app(store,lambda i,c:sample[2],lambda:hosted),base_url=hosted['base_url']) as client:
+        page=client.get('/')
+        assert page.headers['Referrer-Policy'] == 'same-origin'
+        form={'csrf':csrf(page),'invoice_text':sample[0],'context_text':sample[1]}
+        for origin in ('null','https://evil.invalid'):
+            assert client.post('/analyze',data=form,headers={'Origin':origin}).status_code == 403
+        headers={'Origin':hosted['base_url'],'Referer':hosted['base_url']+'/'}
+        assert client.post('/analyze',data={**form,'csrf':'incorrect'},headers=headers).status_code == 403
+        review=client.post('/analyze',data=form,headers=headers)
+        assert review.status_code == 200 and 'AWAITING OWNER' in review.text
+        row=store.get(review.url.path.split('/')[-1])
+        owner=client.get(f'/owner/{row["id"]}',params={'version':row['version'],'token':row['current_token']})
+        assert owner.headers['Referrer-Policy'] == 'same-origin'
+        approval=form_for(row,owner)
+        for origin in ('null','https://evil.invalid'):
+            assert client.post(f'/owner/{row["id"]}',data=approval,headers={'Origin':origin}).status_code == 403
+        assert client.post(f'/owner/{row["id"]}',data=approval,headers={**headers,'Referer':'https://evil.invalid/'}).status_code == 403
+        assert not store.history()
+        receipt=client.post(f'/owner/{row["id"]}',data=approval,headers=headers)
+        assert receipt.status_code == 200 and 'Demo transfer committed' in receipt.text
+        assert len(store.history()) == 1
+
 def test_opaque_local_browser_still_needs_csrf_and_is_not_allowed_when_hosted(store,sample):
     local={**CONFIG,'base_url':'http://127.0.0.1:8000'}
     with TestClient(create_app(store,lambda i,c:sample[2],lambda:local),base_url=local['base_url']) as client:
